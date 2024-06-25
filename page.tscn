@@ -33,17 +33,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+[node name="Count1" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-text = "List 1 count: 1"
+text = "Count 1: 1"
 fit_content = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer"]
+[node name="Count2" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-text = "List 2 count: 1"
+text = "Count 2: 1"
 fit_content = true
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="VBoxContainer"]
+[node name="Total" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
-text = "Total count: 2"
+text = "Total: 2"
 fit_content = true
+
+[connection signal="add" from="VBoxContainer/HBoxContainer/Left" to="." method="_on_left_add"]
+[connection signal="subtract" from="VBoxContainer/HBoxContainer/Left" to="." method="_on_left_subtract"]
+[connection signal="add" from="VBoxContainer/HBoxContainer/Right" to="." method="_on_right_add"]
+[connection signal="subtract" from="VBoxContainer/HBoxContainer/Right" to="." method="_on_right_subtract"]
